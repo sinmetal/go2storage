@@ -1,0 +1,2 @@
+# go2storage
+Cloud Storageに30secごとにファイルをアップロードするサンプル
