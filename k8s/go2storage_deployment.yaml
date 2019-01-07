@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: go2storage-node
+  name: go2storage-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go2storage-node
+  template:
+    metadata:
+      labels:
+        app: go2storage-node
+    spec:
+      containers:
+        - image: gcr.io/$PROJECT_ID/sinmetal/go2storage/feature/id/22:60605d1308ff8d193b05aa14e3521319e72414af
+          name: go2storage-node
+          envFrom:
+            - configMapRef:
+                name: go2storage-config
